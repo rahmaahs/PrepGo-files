@@ -1,0 +1,229 @@
+html {
+    height: 100%;
+    width: 100%;
+
+}
+
+body {
+    background: rgb(134,132,222);
+    background: linear-gradient(0deg, rgba(134,132,222,1) 0%, rgba(26,62,131,1) 100%);
+    background-repeat: no-repeat;
+
+
+}
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #6166DC;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+#logo{
+
+    width: 100px;
+    height: 30px;
+    object-fit: cover;
+}
+#logo2{
+
+    width: 100px;
+    height: 30px;
+    object-fit: cover;
+}
+
+#mainDiv{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -20px;
+    background: linear-gradient(0deg, rgba(134,132,222,1) 0%, rgba(26,62,131,1) 100%);
+    background-repeat: no-repeat;
+}
+
+
+#mainDiv2{
+    width: 100vw;
+    height: 100vh;
+    margin-top: -20px;
+    background-color: #6166DC;
+    background-repeat: no-repeat;
+}
+
+
+#subDiv{
+    position: relative;
+    margin-left: 100px;
+    margin-right: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+#backgroundimg{
+    height: 750px;
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px  2px 2px #222);
+}
+
+#backgroundimg2{
+    height: 600px;
+    margin-top: -50px;
+}
+
+
+button{
+    background: #5046e6;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    border-style: none;
+    padding: 10px;
+    font-size: 9px;
+    border-radius: 50px !important;
+    width: 100px;
+
+}
+
+button:hover{
+    background-color: #6f68df;
+}
+
+#button2{
+    margin-left: 140vh;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+#mainDiv3{
+
+        position: relative;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+
+
+
+}
+
+
+
+#chirplogo{
+
+
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    flex: 1;
+    padding: 16px;
+    height: 300px;
+    border-radius: 10px 0 0 10px;
+
+}
+
+
+#signindiv{
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #6166DC;
+
+    flex: 1;
+    /* padding: 16px; */
+    height: 330px;
+    border-radius: 0 10px 10px 0;
+    color: white;
+
+
+
+
+}
+
+.inputs {
+    width: 200px;
+    border: none;
+    margin-top: 5px;
+    border-bottom: 2px solid white;
+    margin-bottom: 20px;
+    /*background-color: #E4E9F7;*/
+    color: white !important;
+    border-radius: 3px;
+    background: none;
+}
+
+::placeholder {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 10;
+    font-style: normal;
+
+    opacity: 0.7; /* Firefox */
+}
+
+.pfpButtons:hover{
+    -webkit-filter: drop-shadow(2px 2px 2px #222);
+    filter: drop-shadow(2px  2px 2px #222);
+}
+
+.inputs:focus {
+    border: none !important;
+    background: none !important;
+}
+
+
+
+.registerInput {
+    width: 200px;
+    border: none;
+    margin-top: 5px;
+    border-bottom: 2px solid black !important;
+    margin-bottom: 20px;
+    /*background-color: #E4E9F7;*/
+    color: black !important;
+    border-radius: 3px;
+    background: none;
+}
+
+
+.registerInput::placeholder {
+    color: black !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 10;
+    font-style: normal;
+    opacity: 0.7; /* Firefox */
+}
+
+
+
+
+.himothy {
+    color: black !important;
+    transition: none !important;
+}
+.yournothim {
+    background-color: transparent !important;
+}

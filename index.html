@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>PrepGo</title>
+    <script src="script.js"></script>
+
+    <!-- CSS only -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+            integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/prepgonewlogo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+</head>
+<body onload="loadingHomePage()">
+
+
+
+<div class="bg-white" style="background-color: white !important">
+    <header class="absolute inset-x-0 top-0 z-50">
+        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+                <a href="#" class="-m-1.5 p-1.5">
+                    <span class="sr-only">Your Company</span>
+<!--                    <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">-->
+                    <img class="h-9 w-auto" src="images/prepgonewlogo1.png" alt="">
+                </a>
+            </div>
+            <div class="flex lg:hidden">
+                <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-12">
+                <a href="#section0" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
+                <a href="#section1" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
+                <a href="faq.html" class="text-sm font-semibold leading-6 text-gray-900">FAQS</a>
+                <a href="#section2" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                <a href="testpage.html" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+            </div>
+        </nav>
+<!--        &lt;!&ndash; Mobile menu, show/hide based on menu open state. &ndash;&gt;-->
+<!--        <div class="lg:hidden" role="dialog" aria-modal="true">-->
+<!--            &lt;!&ndash; Background backdrop, show/hide based on slide-over state. &ndash;&gt;-->
+<!--            <div class="fixed inset-0 z-50"></div>-->
+<!--            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">-->
+<!--                <div class="flex items-center justify-between">-->
+<!--                    <a href="#" class="-m-1.5 p-1.5">-->
+<!--                        <span class="sr-only">Your Company</span>-->
+<!--                        <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">-->
+<!--                    </a>-->
+<!--                    <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">-->
+<!--                        <span class="sr-only">Close menu</span>-->
+<!--                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">-->
+<!--                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />-->
+<!--                        </svg>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--                <div class="mt-6 flow-root">-->
+<!--                    <div class="-my-6 divide-y divide-gray-500/10">-->
+<!--                        <div class="space-y-2 py-6">-->
+<!--                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Product</a>-->
+<!--                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>-->
+<!--                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>-->
+<!--                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>-->
+<!--                        </div>-->
+<!--                        <div class="py-6">-->
+<!--                            <a href="testpage.html" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"  >Log in</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </header>
+
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[purple] to-[#9089fc] opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+
+
+        </div>
+        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+            <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                    We make SAT prep intuitive. <a href="#section0" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h1 class="text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl" id="ultimateStopId"></h1>
+                <p class="mt-6 text-lg leading-8 text-gray-600">Personalize your SAT journey with practice modules, skill based learning, and advanced tips to take your scores to the next level.</p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="testpage.html" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
+                    <a href="#section0" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]" aria-hidden="true">
+            <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--THE DIFFERENT SECTIONS -->
+
+<div class="overflow-hidden bg-white py-24 sm:py-32" id="section0">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-8 lg:pt-4">
+                <div class="lg:max-w-lg">
+                    <h2 class="text-base font-semibold leading-7 text-indigo-600">Study effectively</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">A customized plan for you.</p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Our modules cover any type of question you might find on the real SAT, and we walk you through how to answer each type step by step. </p>
+                    <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
+                        <div class="relative pl-9">
+                            <dt class="inline font-semibold text-gray-900">
+                                <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" clip-rule="evenodd" />
+                                </svg>
+                                Modules.
+                            </dt>
+                            <dd class="inline">Practice every type of SAT question. Questions are modeled based off of official CollegeBoard question banks.</dd>
+                        </div>
+                        <div class="relative pl-9">
+                            <dt class="inline font-semibold text-gray-900">
+                                <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" clip-rule="evenodd" />
+                                </svg>
+
+                                Skills.
+                            </dt>
+                            <dd class="inline">Learn skills and tips from top-scorers on how to tackle each type of question.</dd>
+                        </div>
+                        <div class="relative pl-9">
+                            <dt class="inline font-semibold text-gray-900">
+                                <svg class="absolute left-1 top-1 h-5 w-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+
+                                    <path fill-rule="evenodd" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" clip-rule="evenodd" />
+                                </svg>
+
+                                Community.
+                            </dt>
+                            <dd class="inline">Chat with your peers, share scores and advice, and build a community. </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <img src="images/homepage.png" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442" style="margin-top: 10px;
+">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="bg-white py-24 sm:py-32" id="section1">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-indigo-600">Study better</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Study with an AI Companion</p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">Study with PrepGo's personal AI, [Enter Name], created just for you.</p>
+        </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                <div class="relative pl-16">
+                    <dt class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" />
+                            </svg>
+                        </div>
+                        Push to deploy
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-600">Use of an AI is staticsally shown to improve learning capabilties</dd>
+                </div>
+                <div class="relative pl-16">
+                    <dt class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                            </svg>
+                        </div>
+                        SSL certificates
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-600">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
+                </div>
+                <div class="relative pl-16">
+                    <dt class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                            </svg>
+                        </div>
+                        Simple queues
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-600">Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
+                </div>
+                <div class="relative pl-16">
+                    <dt class="text-base font-semibold leading-7 text-gray-900">
+                        <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                            <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" />
+                            </svg>
+                        </div>
+                        Advanced security
+                    </dt>
+                    <dd class="mt-2 text-base leading-7 text-gray-600">Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.</dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+<section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8" id="section2">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20"></div>
+    <div class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center"></div>
+    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+        <img class="mx-auto h-12" src="images/prepgonewlogo1.png" alt="">
+        <figure class="mt-10">
+            <blockquote class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                <p>“PrepGo is a better way to study.”</p>
+            </blockquote>
+            <figcaption class="mt-10">
+                <img class="mx-auto h-10 w-10 rounded-full" src="images/pfp4.png" alt="">
+                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                    <div class="font-semibold text-gray-900">Hari Patel</div>
+                    <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true" class="fill-gray-900">
+                        <circle cx="1" cy="1" r="1" />
+                    </svg>
+                    <div class="text-gray-600">Co-Founder of PrepGo</div>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+</section>
+
+
+
+
+<footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+    <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8" >
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="images/prepgonewlogo1.png" class="h-10" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">PrepGo</span>
+            </a>
+            <ul class="yournothim flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="himothy me-4 md:me-6">About</a>
+                </li>
+                <li>
+                    <a href="#" class="himothy me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="himothy me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#" class="himothy">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+<!--        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">PrepGo™</a>. All Rights Reserved.</span>-->
+    </div>
+</footer>
+
+
+
+
+<!--<ul>-->
+<!--    <li><a href=""> <img src="images/prepgologo1.png" id="logo"> </a></li>-->
+
+
+<!--  <button id="button2" onclick="signUp()">Sign Up</button>-->
+
+<!--</ul>-->
+
+
+
+
+
+
+
+
+
+<!--<div id="mainDiv">-->
+
+<!--    <div class="container text-center" id="subDiv">-->
+<!--        <div class="row align-items-start">-->
+<!--            <div class="col" style=" text-align: left; margin-top: 270px">-->
+<!--                <h1 style="font-size: 75px"> The Ultimate </h1> <br> <h1 style="font-size: 75px"> SAT Prep</h1> <br> <h5 style="font-family:'Roboto', sans-serif; font-weight: 300; font-style: normal;">Get Started Today</h5> <button id="button1" onclick="signUp()"> Sign Up</button>-->
+<!--            </div>-->
+<!--            <div class="col">-->
+<!--                <img src="images/imagesforbackground1.png" id="backgroundimg">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+<!--</div>-->
+
+
+<!--<div id="mainDiv2">-->
+
+<!--    <div class="container text-center" >-->
+<!--        <div class="row align-items-start">-->
+
+<!--            <div class="col">-->
+<!--                <h1 style="font-size: 75px; color: white; margin-top: 100px;"> Say goodbye to textbooks.</h1>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div class="row align-items-start">-->
+
+<!--            <div class="col">-->
+<!--                <img src="images/prepgobooks.png" id="backgroundimg2">-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</div>-->
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+    <title>Home</title>
+    <script src="script.js"></script>
+
+
+
+    <!-- CSS only -->
+    <link href="style2.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="images/prepgonewlogo1.png">
+</head>
+<body onload="setInfo(), loadPosts()" style="background-color: #e4e9f7" class="bodyDark">
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+        <span class="image">
+          <img src="" id="pfp2">
+        </span>
+
+            <div class="text logo-text">
+                <span class="name" id="userName">Codinglab</span>
+                <span class="profession">Student</span>
+            </div>
+        </div>
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+
+            <li class="search-box">
+               <i class='bx bx-search icon' onclick="search()"></i>
+                <input type="text" placeholder="Search PrepGo..." id="searchValue">
+            </li>
+
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="#" onclick="home()">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#" onclick="modules()">
+                        <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <span class="text nav-text">Modules</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#" onclick="skills()">
+                        <i class='bx bx-bulb icon'></i>
+                        <span class="text nav-text">Skills</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-link">
+                    <a href="#" onclick="notifs()">
+                        <i class='bx bx-bell icon'></i>
+                        <span class="text nav-text">Notifications</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#" onclick="chat()">
+                        <i class='bx bx-chat icon' ></i>
+                        <span class="text nav-text">Community</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#" onclick="account()">
+                        <i class='bx bx-user icon'></i>
+                        <span class="text nav-text">Account</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#" onclick="help()">
+                        <i class='bx bx-help-circle icon' ></i>
+                        <span class="text nav-text">Contact us</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="">
+                <a href="index.html">
+                    <i class='bx bx-log-out icon'></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+
+        </div>
+    </div>
+
+</nav>
+
+<section class="home">
+
+
+
+<!--    Starts the home tab-->
+
+    <div id="homeDiv" style="display: block; ">
+
+
+           <div class="text"> </div>
+
+            <div class="divdark" style="width: 100%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+                <div style="width: 100%; display: table; " class="text">
+
+                    <div style="display: table-row">
+
+                        <div class="divdark" style="display: table-cell; border-radius: 20px;">  <img src="" id="pfp"> </div>
+                        <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 300;" id="wlcMessage"></h3> </div>
+                        <div  class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="text-align: right" id="dayOfTheWeek"></h3> </div>
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+
+            <div class="skill-box">
+                <span class="title text2" ><p class="text2">Main Idea Questions - Mastery</p></span>
+
+                <div class="skill-bar">
+                <span class="skill-per html" id="skill-per">
+                    <span class="tooltip" id="percntageId"></span>
+                </span>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div style="width: 100%; display: table;" class="text">
+
+
+                    <div class="divdark" style="width: 48%; float:left; margin: 5px; border-radius: 20px;   padding: 20px; "> <h5 class="text" style=" font-weight: 300;">Take a practice test to see where you're at.</h5> <br> <button style="margin-left:60px; font-size: 20px;" onclick="modules()"> Start </button> </div>
+                    <div class="divdark"  style="width: 48%; float:left; margin: 5px; border-radius: 20px;   padding: 20px; "> <h5 class="text" id="mainIdeaScore" style=" font-weight: 300;"></h5> <br> <button style="margin-left:60px; font-size: 20px;" onclick="modules()"> Keep Going </button> </div>
+<!--                <div class="divdark" style="width: 45%; float:left; margin: 5px; border-radius: 20px;   padding: 20px; "> <h5 class="text" style=" font-weight: 300;">Take a practice test to see where you're at.</h5> <br> <button style="margin-left:60px; font-size: 20px;" onclick="modules()"> Start </button> </div>-->
+<!--                <div class="divdark" style="width: 45%; float:left; margin: 5px; border-radius: 20px;   padding: 20px; "> <h5 class="text" style=" font-weight: 300;">Take a practice test to see where you're at.</h5> <br> <button style="margin-left:60px; font-size: 20px;" onclick="modules()"> Start </button> </div>-->
+
+
+            </div>
+
+
+
+
+
+
+
+        <!--    <div style="width: 100%; display: table;" class="text">-->
+
+        <!--        <div style="display: table-row">-->
+        <!--            <div class="divdark" style="width: 600px; display: table-cell; border-radius: 20px; height: 100px; margin-left: -80px; padding: 20px;"> Left </div>-->
+        <!--            <div  class="divdark" style="display: table-cell; border-radius: 20px; height: 100px; padding: 20px;"> Right </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+
+
+    </div>
+
+<!--    Starts the modules tab-->
+
+    <div id="modulesDiv" style="display: none" >
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+
+                <div style="display: table-row">
+
+
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 900;">Modules</h3> </div>
+
+                </div>
+
+                <h6 class="text" style="margin-left: -80px;  font-weight: 100;" > Reading and Comprehension</h6>
+
+                <ol class="alternating-colors">
+                    <li class="moduleLists">
+                        <strong onclick="practice('main_idea_questions')" class="text2">Main Idea Questions</strong>
+                        <p>Practice Main Idea Questions, what is the central idea of the passage?</p>
+                    </li>
+                    <li class="moduleLists" >
+                        <strong onclick="practice('words_in_context')" class="text2">Words in Context</strong>
+                        <p>Practice words in context, how do words fit into sentences?</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong onclick="practice('comparing_questions')" class="text2">Comparing two passages</strong>
+                        <p>How do two passages compare?</p>
+                    </li>
+<!--                    <li class="moduleLists">-->
+<!--                        <strong>Advanced Review</strong>-->
+<!--                        <p>Ski, slip, and slide your way to victory</p>-->
+<!--                    </li>-->
+                </ol>
+
+
+
+                <br>
+
+                <h6 class="text" style="margin-left: -80px;  font-weight: 100;" > Writing and Grammar </h6>
+
+                <ol class="alternating-colors">
+                    <li class="moduleLists">
+                        <strong onclick="practice('standard_english_conventions')" class="text2">Standard English Conventions</strong>
+                        <p>Standard grammatical questions from sentence forming.</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong onclick="practice('transition')" class="text2">Transition words</strong>
+                        <p>How are ideas and thoughts organized with transition words?</p>
+                    </li>
+
+
+                </ol>
+
+
+
+            </div>
+
+
+<!--            <div class="row2">-->
+<!--                <div class="column2">Testing</div>-->
+<!--                <div class="column2">Yes</div>-->
+<!--                <div class="column2">No</div>-->
+<!--            </div>-->
+
+        </div>
+
+
+
+    </div>
+
+    <style>
+        .column2 {
+            float: left;
+            width: 33.33%;
+        }
+
+        /* Clear floats after the columns */
+        .row2:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .column2 {
+            float: left;
+            text-align: center;
+        }
+
+        .left, .right {
+            width: 25%;
+        }
+
+        .middle {
+            width: 50%;
+        }
+    </style>
+
+
+
+
+    <div id="skillsDiv" style="display: none">
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+                <div style="display: table-row">
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;">
+                        <h3 class="text" style="margin-left: -80px; font-weight: 900;">Skills</h3>
+                    </div>
+                </div>
+
+                <h6 class="text" style="margin-left: -80px; font-weight: 100;">Quick Summary</h6>
+                <ol class="alternating-colors">
+                    <li class="moduleLists">
+                        <strong class="text2">Your Strongest Topic</strong>
+                        <p id="strongestTopic">put highest percentage here</p>
+                        <p id="strongestPercentage">put highest percentage here</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong class="text2">Your Weakest Topic</strong>
+                        <p id="weakestTopic">put lowest percentage here</p>
+                        <p id="weakestPercentage">put lowest percentage here</p>
+                    </li>
+                </ol>
+
+                <br>
+
+                <!-- Skills List 1 -->
+                <h6 class="text" style="margin-left: -80px; font-weight: 100;">Reading Skills</h6>
+                <ol class="alternating-colors" id="readingSkills">
+                    <li class="moduleLists">
+                        <strong class="text2">Topic 1</strong>
+                        <p>Blank</p>
+                        <p id="htmlPercentage">0%</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong class="text2">Topic 2</strong>
+                        <p>Blank</p>
+                        <p id="cssPercentage">0%</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong class="text2">Topic 3</strong>
+                        <p>Blank</p>
+                        <p id="jsPercentage">0%</p>
+                    </li>
+                </ol>
+
+                <br>
+
+                <!-- Skills List 2 -->
+                <h6 class="text" style="margin-left: -80px; font-weight: 100;">Writing Skills</h6>
+                <ol class="alternating-colors" id="writingSkills">
+                    <li class="moduleLists">
+                        <strong class="text2">Communication</strong>
+                        <p>Effective verbal and written skills</p>
+                        <p id="communicationPercentage">0%</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong class="text2">Problem-Solving</strong>
+                        <p>Ability to analyze and solve complex issues</p>
+                        <p id="problemSolvingPercentage">0%</p>
+                    </li>
+                </ol>
+
+                <br>
+
+                <!-- Skills List 3 -->
+                <h6 class="text" style="margin-left: -80px; font-weight: 100;">Math Skills</h6>
+                <ol class="alternating-colors" id="mathSkills">
+                    <li class="moduleLists">
+                        <strong class="text2">Algebra</strong>
+                        <p>Understanding algebraic concepts</p>
+                        <p id="algebraPercentage">0%</p>
+                    </li>
+                    <li class="moduleLists">
+                        <strong class="text2">Geometry</strong>
+                        <p>Understanding geometric concepts</p>
+                        <p id="geometryPercentage">0%</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="notifsDiv" style="display: none">
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+
+                <div style="display: table-row">
+
+
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 900;">Notifications</h3> </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="chatDiv" style="display: none">
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+
+                <div style="display: table-row">
+
+
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 900;">Community</h3> </div>
+
+                </div>
+
+
+                    <input id="enterMessage" placeholder="Send a message" class="bodyDark"> <button id="sendMessage"onclick="post()"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
+            </svg></button>
+                <div id="postDiv"> </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="accountDiv" style="display: none">
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+
+                <div style="display: table-row">
+
+
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 900;">Account</h3> </div>
+
+                    <h4 class="text2"> Change your profile picture </h4>
+                    <div id="choosePfp2" style="display: block">
+                        <!--                <label for="registerUserId" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>-->
+                        <table class="table">
+                            <tbody>
+                            <tr>
+
+                                <td >  <img src="images/pfp2.png" style="height: 45px; margin: 10px;" onclick="setPfp2('2')" class="pfpButtons" ></td>
+                                <td > <img src="images/pfp3.png" style="height: 45px; margin: 10px;" onclick="setPfp2('3')" class="pfpButtons"></td>
+                                <td ><img src="images/pfp4.png" style="height: 45px; margin: 10px;" onclick="setPfp2('4')" class="pfpButtons"></td>
+                            </tr>
+
+
+                            <tr>
+
+                                <td>    <img src="images/pfp5.png" style="height: 45px; margin: 10px;" onclick="setPfp2('5')" class="pfpButtons"></td>
+                                <td> <img src="images/pfp7.png" style="height: 45px; margin: 10px;" onclick="setPfp2('7')"class="pfpButtons"></td>
+                                <td> <img src="images/pfp8.png" style="height: 45px; margin: 10px;" onclick="setPfp2('8')" class="pfpButtons"></td>
+                            </tr>
+                            <tr>
+
+                                <td> <img src="images/pfp9.png" style="height: 45px; margin: 10px;" onclick="setPfp2('9')" class="pfpButtons"></td>
+                                <td>   <img src="images/pfp10.png" style="height: 45px; margin: 10px;" onclick="setPfp2('10')" class="pfpButtons"></td>
+                                <td>   <img src="images/pfp11.png" style="height: 45px; margin: 10px;" onclick="setPfp2('11')" class="pfpButtons"></td>
+                            </tr>
+                            <tr>
+
+                                <td><img src="images/pfp12.png" style="height: 45px; margin: 10px;" onclick="setPfp2('12')" class="pfpButtons"></td>
+                                <td>   <img src="images/pfp13.png" style="height: 45px; margin: 10px;" onclick="setPfp2('13')" class="pfpButtons"></td>
+                                <td><img src="images/pfp1.png" style="height: 45px; margin: 10px;" onclick="setPfp2('1')" class="pfpButtons"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                    <div class="card" id="successMessage" style="display: none">
+                        <svg class="wave" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                    d="M0,256L11.4,240C22.9,224,46,192,69,192C91.4,192,114,224,137,234.7C160,245,183,235,206,213.3C228.6,192,251,160,274,149.3C297.1,139,320,149,343,181.3C365.7,213,389,267,411,282.7C434.3,299,457,277,480,250.7C502.9,224,526,192,549,181.3C571.4,171,594,181,617,208C640,235,663,277,686,256C708.6,235,731,149,754,122.7C777.1,96,800,128,823,165.3C845.7,203,869,245,891,224C914.3,203,937,117,960,112C982.9,107,1006,181,1029,197.3C1051.4,213,1074,171,1097,144C1120,117,1143,107,1166,133.3C1188.6,160,1211,224,1234,218.7C1257.1,213,1280,139,1303,133.3C1325.7,128,1349,192,1371,192C1394.3,192,1417,128,1429,96L1440,64L1440,320L1428.6,320C1417.1,320,1394,320,1371,320C1348.6,320,1326,320,1303,320C1280,320,1257,320,1234,320C1211.4,320,1189,320,1166,320C1142.9,320,1120,320,1097,320C1074.3,320,1051,320,1029,320C1005.7,320,983,320,960,320C937.1,320,914,320,891,320C868.6,320,846,320,823,320C800,320,777,320,754,320C731.4,320,709,320,686,320C662.9,320,640,320,617,320C594.3,320,571,320,549,320C525.7,320,503,320,480,320C457.1,320,434,320,411,320C388.6,320,366,320,343,320C320,320,297,320,274,320C251.4,320,229,320,206,320C182.9,320,160,320,137,320C114.3,320,91,320,69,320C45.7,320,23,320,11,320L0,320Z"
+                                    fill-opacity="1"
+                            ></path>
+                        </svg>
+
+                        <div class="icon-container">
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 512 512"
+                                    stroke-width="0"
+                                    fill="currentColor"
+                                    stroke="currentColor"
+                                    class="icon"
+                            >
+                                <path
+                                        d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="message-text-container">
+                            <p class="message-text">Looking good</p>
+                            <p class="sub-text">You have successfully updated your profile picture. Reload the page to see changes.</p>
+                        </div>
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 15 15"
+                                stroke-width="0"
+                                fill="none"
+                                stroke="currentColor"
+                                class="cross-icon"
+                        >
+                            <path
+                                    fill="currentColor"
+                                    d="M11.7816 4.03157C12.0062 3.80702 12.0062 3.44295 11.7816 3.2184C11.5571 2.99385 11.193 2.99385 10.9685 3.2184L7.50005 6.68682L4.03164 3.2184C3.80708 2.99385 3.44301 2.99385 3.21846 3.2184C2.99391 3.44295 2.99391 3.80702 3.21846 4.03157L6.68688 7.49999L3.21846 10.9684C2.99391 11.193 2.99391 11.557 3.21846 11.7816C3.44301 12.0061 3.80708 12.0061 4.03164 11.7816L7.50005 8.31316L10.9685 11.7816C11.193 12.0061 11.5571 12.0061 11.7816 11.7816C12.0062 11.557 12.0062 11.193 11.7816 10.9684L8.31322 7.49999L11.7816 4.03157Z"
+                                    clip-rule="evenodd"
+                                    fill-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </div>
+
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="helpDiv" style="display: none">
+        <div class="divdark" style="width: 90%; border-radius: 20px; margin: 40px; margin-right: 200px;">
+            <div style="width: 100%; display: table;" class="text">
+
+                <div style="display: table-row">
+
+
+                    <div class="divdark" style="display: table-cell; border-radius: 20px;"> <h3 class="text" style="margin-left: -80px;  font-weight: 900;">Help</h3> </div> <br>
+
+
+                </div>
+
+
+                <embed style="height: 1000px; width: 1000px;"src="https://www.evades.io/"
+                       type="text/html" />
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<script>
+    const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+    toggle.addEventListener("click", () => {
+        sidebar.classList.toggle("close");
+    })
+    searchBtn.addEventListener("click", () => {
+        sidebar.classList.remove("close");
+    })
+    modeSwitch.addEventListener("click", () => {
+        body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+            modeText.innerText = "Light mode";
+        } else {
+            modeText.innerText = "Dark mode";
+        }
+    });
+</script>
+
+
+<style>
+    .pfpButtons:hover{
+        -webkit-filter: drop-shadow(2px 2px 2px #222);
+        filter: drop-shadow(2px  2px 2px #222);
+    }
+</style>
+
+</body>
+
+</html>

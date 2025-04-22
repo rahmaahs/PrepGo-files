@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modules</title>
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+
+    <!-- CSS only -->
+    <link href="style2.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+            integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="images/prepgonewlogo1.png">
+
+
+</head>
+
+<script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+<body style="background-color: #E4E9F7 !important;" onload="practiceModule(); loadPracticePage(); startStopwatch();">
+
+<!--<div id="calculator" style="width: 600px; height: 400px; display: none; margin-left: 600px;"></div>-->
+<!--<script>-->
+<!--    var elt = document.getElementById('calculator');-->
+<!--    var calculator = Desmos.GraphingCalculator(elt);-->
+<!--</script>-->
+
+
+<div id="popup" class="popup" style="display: none">
+    <div id="popup-header" class="popup-header">
+        <h2>Click here to drag</h2>
+<!--        <span id="close-btn" class="close-btn">&times;</span>-->
+    </div>
+    <div class="popup-content">
+
+        <div id="calculator" style="width: 600px; height: 400px; "></div>
+    </div>
+</div>
+
+
+<script>
+    var elt = document.getElementById('calculator');
+    var calculator = Desmos.GraphingCalculator(elt);
+    let time = -1, intervalId;
+
+    function incrementTime() {
+        time++;
+        const clock = document.getElementById("time");
+        clock.textContent =
+            ("0" + Math.trunc(time / 60)).slice(-2) +
+            ":" + ("0" + (time % 60)).slice(-2);
+
+        if (time >= 600) { // Stop the timer after 10 minutes (600 seconds)
+            clearInterval(intervalId);
+        }
+    }
+
+    function startStopwatch() {
+        incrementTime();
+        intervalId = setInterval(incrementTime, 1000);
+    }
+
+</script>
+
+
+
+
+<div style="background-color: white; height: 60px; margin: 40px; border-radius: 20px; padding: 10px;">
+
+<!--    <div style="float: left"> <h3 style="font-weight: 300"> Practice </h3> </div>-->
+<!--    <div style="float: right"> Hello      <i class='bx bx-calculator icon' onclick="showCalc()"></i> </div>-->
+    <div class="container">
+        <div style="margin-left: -200px;"><h3 style="font-weight: 300" id="typeOfQuestion"> Practice </h3></div>
+<!--        <div style="margin-left: 200px;"><h3 style="font-weight: 300"> 02:35 </h3></div>-->
+        <h3>
+            <div id="time">00:00</div>
+        </h3>
+        <div> <i id="calcButton" class='bx bx-calculator icon' onclick="showCalc()" style="font-size: 30px; margin-left: 75%;"></i> </div>
+
+    </div>
+
+
+
+</div>
+
+
+<div id="mainDiv5" style="background-color: white; height: fit-content; margin: 40px;border-radius: 20px; padding: 20px; display: block;">
+
+    <table style="width: 100%">
+        <tr>
+            <td> <div style="background-color: black; width: 40px; padding-left:10px; padding-right:10px;" ><h3 style="color: white" id="questionNumber">1</h3> </div></td>
+
+        </tr>
+    </table>
+
+    <div style="padding: 20px;">
+
+        <table>
+            <tr>
+                <td><h5 id="passageId">Antonio Marez y Luna, the protagonist of Rudolf Anaya’s 1972 novel Bless Me, Ultima, is on a spiritual journey of self-discovery, a story arc that, in Anaya’s work, is not _______: many of his narratives illustrate similar explorations of identity.  Which choice completes the text with the most logical and precise word or phrase?</h5><br><h5 id="questionId"></h5></td>
+
+            </tr>
+            <tr>
+                <td><button class="answerChoice btn-disable" id="acA" onclick="answer('A')"> A   monotnous</button></td>
+
+            </tr>
+            <tr>
+                <td><button class="answerChoice btn-disable" id="acB" onclick="answer('B')"> B   unorthodox</button></td>
+
+            </tr>
+            <tr>
+                <td><button class="answerChoice btn-disable" id="acC" onclick="answer('C')"> C   Advantageous</button></td>
+
+            </tr>
+            <tr>
+                <td><button class="answerChoice btn-disable" id="acD" onclick="answer('D')"> D   Undeniable</button></td>
+
+            </tr>
+        </table>
+    </div>
+
+    <button id="next" onclick="next()"> Next </button>
+    <button id="hintButton" onclick="hint()"> Hint </button>
+
+    <br>
+    <p id="progressBar"> </p>
+
+    <p id="hint"> </p> <br>
+    <p id="explanation"> </p>
+
+</div>
+
+
+
+
+
+<div id="mainDiv6" style="background-color: white; height: fit-content; margin: 40px;border-radius: 20px; padding: 20px; display: none;">
+
+
+ <h1 id="score"> </h1>
+
+    <button onclick="returnHome()"> Return Home </button>
+
+
+</div>
+
+
+
+<!--<div class="container text-center" id="mainDiv4" >-->
+<!--    <div class="row align-items-center">-->
+<!--        <div class="col" id="chirplogo2" style="height: 100px; background-color: white; box-shadow: none; margin-top: -600px;">-->
+
+
+
+<!--            <div class="container text-center" style="margin-top: 20px;">-->
+<!--                <div class="row">-->
+<!--                    <div class="col">-->
+<!--                        <h3>Practice</h3>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <h3>02:35</h3>-->
+<!--                    </div>-->
+<!--                    <div class="col">-->
+<!--                        <button onclick="showCalc()"> </button>-->
+<!--                        <i class='bx bx-calculator icon' onclick="showCalc()"></i>-->
+<!--                        <i class='bx bx-menu icon' ></i>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+
+
+
+
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--<div class="container text-center" id="mainDiv3" >-->
+<!--    <div class="row align-items-center">-->
+<!--        <div class="col" id="chirplogo" style="height: 600px; background-color: white; box-shadow: none; margin-top: 120px">-->
+
+
+<!--            <br>-->
+
+
+
+
+
+<!--        </div>-->
+
+<!--    </div>-->
+<!--</div>-->
+
+
+
+
+
+
+
+</body>
+</html>
